@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <!-- Usamos Bootstrap 4 para el diseño moderno -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .btn-custom {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 10px;
+            width: 180px;
+        }
+        .header {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .card {
+            margin: 20px;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bienvenido al Sistema de Inventario</h1>
+            <p>Gestiona tus productos de manera fácil y rápida.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Agregar Producto</h5>
+                        <a href="{{ url_for('agregar') }}" class="btn btn-primary btn-custom">Agregar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ver Inventario</h5>
+                        <a href="{{ url_for('ver_inventario') }}" class="btn btn-success btn-custom">Ver</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Eliminar Producto</h5>
+                        <a href="{{ url_for('eliminar', id=1) }}" class="btn btn-danger btn-custom">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-5">
+            <p>&copy; 2024 Sistema de Inventario</p>
+        </footer>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
