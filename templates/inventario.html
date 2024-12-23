@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Inventario de Productos</h1>
+        </header>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+            </tr>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto[1] }}</td>
+                <td>{{ producto[2] }}</td>
+                <td>${{ producto[3] }}</td>
+                <td>${{ producto[2] * producto[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="/" class="btn">Volver a la Página Principal</a>
+    </div>
+</body>
+</html>
